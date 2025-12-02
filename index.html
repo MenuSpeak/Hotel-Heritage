@@ -21,6 +21,8 @@
       --gap: 20px;
       --ff-heading: 'Playfair Display', serif;
       --ff-ui: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      --orange: #ff9800;
+      --green: #4CAF50;
     }
 
     * {
@@ -77,7 +79,7 @@
       gap: var(--gap);
     }
 
-    /* Cafe Header */
+    /* Cafe Header - Original Style */
     .cafe-header {
       text-align: center;
       margin-bottom: 30px;
@@ -109,11 +111,37 @@
 
     .cafe-subtitle {
       font-size: 1.2rem;
-      color: var(--muted);
+      color: var(--orange);
       letter-spacing: 3px;
       text-transform: uppercase;
-      font-weight: 500;
+      font-weight: 700;
       margin-top: 10px;
+    }
+
+    .location-info {
+      font-size: 1rem;
+      margin-top: 15px;
+      line-height: 1.6;
+    }
+
+    .location-text {
+      font-weight: 700;
+      color: #ffffff;
+      margin-bottom: 8px;
+    }
+
+    .address {
+      color: var(--green);
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 8px;
+    }
+
+    .mobile-numbers {
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 1.05rem;
+      margin-bottom: 15px;
     }
 
     .veg-nonveg {
@@ -163,6 +191,67 @@
     .nonveg .symbol {
       background: #f44336;
       border: 2px solid #c62828;
+    }
+
+    /* Location Link Section - Added at bottom */
+    .location-link-section {
+      background: rgba(255, 255, 255, 0.03);
+      border-radius: 12px;
+      padding: 20px;
+      margin: 20px 0;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(6px);
+      text-align: center;
+    }
+
+    .location-link-header {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-bottom: 15px;
+    }
+
+    .location-link-header h3 {
+      font-family: var(--ff-heading);
+      color: var(--gold2);
+      font-size: 1.3rem;
+      margin: 0;
+    }
+
+    .location-icon {
+      width: 24px;
+      height: 24px;
+      color: var(--gold1);
+    }
+
+    .map-link-container {
+      display: flex;
+      justify-content: center;
+    }
+
+    .map-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 24px;
+      background: linear-gradient(90deg, var(--gold1), var(--gold2));
+      color: #0b0b0d;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .map-link:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(212, 175, 55, 0.3);
+    }
+
+    .map-link svg {
+      width: 20px;
+      height: 20px;
     }
 
     /* Header and Navigation */
@@ -888,11 +977,16 @@
 </head>
 <body>
   <div class="container">
-    <!-- Cafe Header -->
+    <!-- Cafe Header - Original Style -->
     <div class="cafe-header">
       <div class="cafe-name">श्री तुळजाभवानी</div>
       <div class="cafe-subtitle">महाराष्ट्र नाश्ता खानावळ</div>
-      <p style="margin-top: 15px; color: var(--muted);">वापी गुजरात निअर GIDC पोलिस स्टेशन Opposite पोस्ट ऑफिस ३९६१९५ <br>Mo no. 9512220338/9512220339</p><div class="veg-nonveg">
+      <div class="location-info">
+        <div class="location-text">Location:</div>
+        <div class="address">वापी गुजरात निअर GIDC पोलिस स्टेशन Opposite पोस्ट ऑफिस ३९६१९५</div>
+        <div class="mobile-numbers">Mo no. 9512220338 / 9512220339</div>
+      </div>
+      <div class="veg-nonveg">
         <div class="veg">
           <span class="symbol"></span>
           <span>Veg</span>
@@ -928,6 +1022,26 @@
         <!-- Cards injected by JS -->
       </section>
     </main>
+
+    <!-- Location Link Section - Added at bottom -->
+    <div class="location-link-section">
+      <div class="location-link-header">
+        <svg class="location-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path>
+          <circle cx="12" cy="10" r="3"></circle>
+        </svg>
+        <h3>Find Us on Google Maps</h3>
+      </div>
+      <div class="map-link-container">
+        <a href="https://maps.app.goo.gl/fXp183eCt5knnheV9" target="_blank" class="map-link">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          Open in Google Maps
+        </a>
+      </div>
+    </div>
   </div>
 
   <!-- Cart Button -->
@@ -1034,7 +1148,7 @@
       {"id":2,"cat":"Breakfast","name":"शिरा / Shira","price":"₹30","desc":"Shira","tags":["Vegetarian"],"img":"img/shira.jpeg"},
       {"id":3,"cat":"Breakfast","name":"उपमा / Upama","price":"₹30","desc":"Upama","tags":["Vegetarian"],"img":"img/upama.jpeg"},
       {"id":4,"cat":"Breakfast","name":"साबुदाणा खिचड़ी / Shabudana Khichadi","price":"₹30","desc":"Shabudana Khichadi","tags":["Vegetarian"],"img":"img/shabudana_khichadi.jpeg"},
-      {"id":5,"cat":"Thali","name":"वेज थाली / Veg Thali","price":"₹180","desc":"4 Chapati, Rice, 2 Bhaji, Salad, Dal and Dahi","tags":["Vegetarian"],"img":"img/veg_thali.jpeg"},
+      {"id":5,"cat":"Thali","name":"वेज थाली / Veg Thali","price":"₹80","desc":"4 Chapati, Rice, 2 Bhaji, Salad, Dal and Dahi","tags":["Vegetarian"],"img":"img/veg_thali.jpeg"},
       {"id":6,"cat":"Thali","name":"चिकन थाली / Chicken Thali","price":"₹130","desc":"Chicken Fry (1 plate), Rassa Plate, Salad, 4 Chapati and Rice","tags":["Non-Vegetarian"],"img":"img/chicken_thali.jpeg"},
       {"id":7,"cat":"Thali","name":"अंडा थाली / Egg Thali","price":"₹100","desc":"2 Egg, Egg Rassa, 4 Chapati and Rice Plate","tags":["Non-Vegetarian"],"img":"img/egg_thali.jpeg"},
       {"id":8,"cat":"Thali","name":"मटन थाली / Mutton Thali","price":"₹190","desc":"1 Mutton Plate, Rassa Plate, 4 Chapati, Rice Plate and Salad","tags":["Non-Vegetarian"],"img":"img/mutton_thali.jpeg"},
